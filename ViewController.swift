@@ -36,8 +36,40 @@ class ViewController: UIViewController {
         
         redView.backgroundColor = .orange
         
-        print(view.superview)
-        print(purpleView.superview as Any)
+        redView.alpha = 0.5
+        blackView.alpha = 0.8
+        
+        /*
+         The most direct way to manipulate your drawing—whether by movement,
+         scaling, or rotation—is to call the functions translateBy(x:y:),
+         scaleBy(x:y:), or rotate(by:), respectively. 
+         You should generally only create an affine transform if you want to
+         reuse it later.
+        */
+        
+        let scaling = CGAffineTransform(scaleX: 3, y: 3)
+        let rotation = CGAffineTransform(rotationAngle: CGFloat(M_PI_2 / 2))
+        let translation = CGAffineTransform(translationX: 30, y: -90)
+        
+        // use member methods to affine to do more than one transformation
+        //purpleView.transform = rotation
+        purpleView.transform = scaling.rotated(by: CGFloat(M_PI_2 / 2))
+        greenView.transform = translation
+        
+        redView.layer
+        
+        // bounds example:
+        /**
+         * let backgrounImage = CGRect(x: 0, y: 0, width: view.frame.size.width,
+         *                             height: view.frame.size.height)
+         * let backgroundImage = BackgroundImage(frame: backgroundFrame)
+         *******
+         * let backgroundImage = BackgroundImage(frame: view.bounds)
+        **/
+
+        //print(purpleView.frame)
+        //print(view.superview)
+        //print(purpleView.superview as Any)
         //print(view.subviews)
         
     }
