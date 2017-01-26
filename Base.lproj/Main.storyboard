@@ -42,6 +42,10 @@
                             <constraint firstItem="na1-K6-gTv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UTe-x0-LPb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenView" destination="EG4-UU-jbo" id="evy-Kh-yAx"/>
+                        <outlet property="redView" destination="na1-K6-gTv" id="O0Z-bt-Wvq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
